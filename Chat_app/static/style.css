@@ -16,7 +16,7 @@ body {
 
         &:has(>form>input:checked) {
             border: 3px solid green;
-            background-color: rgb(176, 222, 176);
+            background-color: rgb(12, 125, 12);
             opacity: 40%;
         }
 

@@ -91,5 +91,17 @@ def front_users():
     notes = req.json()
     return render_template('notes.html.j2', notes=notes)
 
+
+with app.app_context():
+    # Si la table est vide, ajoutez des notes par défaut
+    if Note.query.count() == 0:
+        note1 = Note(title="cours", content="acheter des céréales", done=False)
+        note2 = Note(title="devoirs", content="lire le cours de MMC", done=False)
+        db.session.add(note1)
+        db.session.add(note2)
+        db.session.commit()
+
+
 if __name__ == '__main__':
     app.run(debug=False)
+
