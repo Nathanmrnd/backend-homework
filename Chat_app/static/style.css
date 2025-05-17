@@ -6,24 +6,27 @@ body {
     text-align: center;
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     row-gap: 40px;
+}
 
-    .note {
-        padding: 10px;
-        border-radius: 10px;
-        margin: 20px;
+.note {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+    width: 250px;
+    border: 3px solid rgb(199, 88, 88);
+    background-color: rgb(237, 196, 196);
+    opacity: 1;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    text-align: left;
+    color: black;
+}
 
-        &:has(>form>input:checked) {
-            border: 3px solid green;
-            background-color: rgb(12, 125, 12);
-            opacity: 40%;
-        }
-
-        &:not(:has(>form>input:checked)) {
-            border: 3px solid rgb(199, 88, 88);
-            background-color: rgb(237, 196, 196);
-        }
-    }
-
+.note.done {
+    border: 3px solid green;
+    background-color: rgb(12, 125, 12);
+    opacity: 0.4;
+    color: white;
 }
